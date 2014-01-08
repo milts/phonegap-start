@@ -1,42 +1,126 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
     <head>
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World</title>
+        <!-- STYLES -->
+        <link rel="stylesheet" type="text/css" href="css/util.css" />
+        <link rel="stylesheet" type="text/css" href="css/main.css" />
+        <link rel="stylesheet" type="text/css" href="css/ember-animated-outlet.css" />
+
+        <title>JAGERBONDS</title>
     </head>
     <body>
-        <div class="app">
-            <h1>PhoneGap</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div>
-        <script type="text/javascript" src="phonegap.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
+
+        <!-- MAIN APP VIEW -->
+        <script type="text/x-handlebars" id="application" data-template-name="application">
+            {{#if showNav}}
+                {{partial "nav"}}
+            {{/if}}
+
+            {{ animatedOutlet name="main" }}
+
+            {{#if showBottomNav}}
+                {{partial "bottom-nav"}}
+            {{/if}}
+
+            {{#if showFooter}}
+                {{partial "footer"}}
+            {{/if}}
         </script>
+        <div id="fb-root"></div>
+
+
+        <!-- SCRIPTS -->
+        <script src="js/libs/jquery.min.js"></script>
+        <script src="js/libs/jquery.livesearch.js"></script>
+        <script src="js/libs/jquery-ui.js"></script>
+        <script src="js/libs/jquery.ui.touch-punch.min.js"></script>
+        <script src="js/libs/jquery.roundabout.min.js"></script>
+        <script src="js/libs/jquery.event.drag.live-2.2.js"></script>
+        <script src="js/libs/jquery.event.drop.live-2.2.js"></script>
+        <script src="js/libs/fastclick.js"></script>
+        <script src="js/libs/statusbar.js"></script>
+        <script src="js/libs/moment.min.js"></script>
+
+        <!-- cordova -->
+        <script src="cordova.js"></script>
+        <!-- cordova facebook plugin -->
+        <script type="text/javascript" src="js/libs/cdv-plugin-fb-connect.js"></script>
+        <!-- facebook js sdk -->
+
+        <!--<script type="text/javascript" src="js/libs/facebook-js-sdk.js"></script>-->
+        <script src="//connect.facebook.net/en_US/all.js"></script>
+
+
+        <script src="js/libs/handlebars-1.0.0.js"></script>
+        <script src="js/libs/ember-1.2.0.js"></script>
+        <script src="js/libs/ember-touch.js"></script>
+        <script src="js/libs/ember-animated-outlet.js"></script>
+
+        <script src="js/app.js"></script>
+        <script src="js/routes.js"></script>
+        <script src="js/controllers.js"></script>
+        <script src="js/views.js"></script>
+        <script src="js/templates.js"></script>
+
+
+
+
+        <script>
+            document.addEventListener('deviceready', function() {
+//                setTimeout(function(){
+//                    navigator.splashscreen.hide();
+//                }, 3000);
+
+                StatusBar.show();
+                StatusBar.overlaysWebView(true);
+                StatusBar.styleLightContent();
+
+                FastClick.attach(document.body);
+                $('.ui-slider-handle').draggable();
+
+//                try {
+//                    //alert('Device is ready! Make sure you set your app_id below this alert.');
+//                    FB.init({
+//                        appId: "260699214082942",
+//                        nativeInterface: CDV.FB,
+//                        useCachedDialogs: false,
+//
+//                        status      : true, // Check Facebook Login status
+//                        cookie      : false, // enable cookies to allow the server to access the session
+//                        xfbml       : true, // Look for social plugins on the page
+//                        oauth       : true // enables OAuth 2.0
+//                    });
+//
+//                    //document.getElementById('data').innerHTML = "";
+//                } catch (e) {
+//                    alert(e);
+//                }
+            }, false);
+
+
+            function scrollBoucne(){
+                document.addEventListener("DOMContentLoaded", ready, false);
+
+
+                document.addEventListener("touchmove", function(evt){
+                    evt.preventDefault();
+                }, false);
+
+                function ready(){
+                    var container = document.getElementsByClassName("scrollpane")[0];
+
+                    container.addEventListener("touchmove", function(evt){
+                        evt.stopPropagation();
+                    }, false);
+                }
+            }
+        </script>
+
+        <script src="js/facebook.js"></script>
+
+        <div id="log"></div>
     </body>
 </html>

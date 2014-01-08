@@ -1,0 +1,24 @@
+<section id="age-gate">
+    <div class="view-padding">
+    <div class="brand"></div>
+    <h1>{{ view.header }}</h1>
+    <h2>{{ view.subtitle }}</h2>
+
+    <div class="date-picker">
+        <span class="month">
+            <h3>MONTH</h3>
+            <input type="tel" value="" maxlength="2" placeholder="MM"/>
+        </span>
+        <span class="day">
+            <h3>DAY</h3>
+            <input type="tel" value="" maxlength="2" placeholder="DD"/>
+        </span>
+        <span class="year">
+            <h3>YEAR</h3>
+            <input type="tel" value="" maxlength="4" placeholder="YYYY"/>
+        </span>
+    </div>
+
+    <button class="grey" {{action 'goToDash'}}>> ENTER</button>
+        </div>
+</section>

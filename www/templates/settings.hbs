@@ -1,0 +1,91 @@
+<section class="content">
+	<section id="settings" class="scrollpane">
+		<div class="header">
+	    	<h1>DATA</h1>
+	    </div>
+	    <div class="setting">
+	    	<h2>Instagram</h2>
+	    	<div class="toggle">
+                {{#if instagramEnabled}}
+                    <h3 class="on">ON</h3>
+                    <div class="dot on"></div>
+                    <div class="toggle_bg on"></div>
+                {{else}}
+                    <h3>OFF</h3>
+                    <div class="dot"></div>
+                    <div class="toggle_bg"></div>
+                {{/if}}
+	    	</div>
+	    </div>
+
+	    <div class="header">
+	    	<h1>SHARE</h1>
+	    </div>
+	    <div class="setting">
+	    	<h2>Facebook</h2>
+	    	<div class="toggle">
+                {{#if enableFacebookNotifications}}
+                    <h3 class="on">ON</h3>
+                    <div class="dot on"></div>
+                    <div class="toggle_bg on"></div>
+                {{else}}
+                    <h3>OFF</h3>
+                    <div class="dot"></div>
+                    <div class="toggle_bg"></div>
+                {{/if}}
+	    	</div>
+	    </div>
+
+	    <div class="header">
+	    	<h1>SUPPORT</h1>
+	    </div>
+	    <div class="setting redirect">
+	    	<h2>Contact Us</h2>
+	    </div>
+	    <div class="setting redirect">
+	    	<h2>AppSite.com</h2>
+	    </div>
+	    <div class="setting redirect">
+	    	<h2>Do’s & Don’ts</h2>
+	    </div>
+
+	    <div class="header">
+	    	<h1>PHONE NOTIFICATIONS</h1>
+	    </div>
+	    <div class="setting">
+	    	<h2>Invite Notifications</h2>
+	    	<div class="toggle">
+                {{#if phoneNotificationsEnabled}}
+                    <h3 class="on">ON</h3>
+                    <div class="dot on"></div>
+                    <div class="toggle_bg on"></div>
+                {{else}}
+                    <h3>OFF</h3>
+                    <div class="dot"></div>
+                    <div class="toggle_bg"></div>
+                {{/if}}
+	    	</div>
+	    </div>
+
+	    <div class="header">
+	    	<h1>TERMS</h1>
+	    </div>
+	    <div class="setting redirect">
+	    	<h2>Please Drink Responsibly</h2>
+	    </div>
+	    <div class="setting redirect">
+	    	<h2>Terms of Use</h2>
+	    </div>
+	    <div class="setting redirect">
+	    	<h2>Privacy Policy</h2>
+	    </div>
+
+	    <div class="header">
+	    	<h1>ACCOUNT</h1>
+	    </div>
+	    <div class="setting redirect" {{ action "logout" controller }}>
+	    	<h2>Logout</h2>
+	    </div>
+
+    </section>
+</section>

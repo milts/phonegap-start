@@ -1,0 +1,11 @@
+<ul id="data" class="friendlist">
+    {{#each friend in controller}}
+        <li class="friend" {{bindAttr data-fb-id="friend.id"}}>
+            <img class="fb-profile-picture" src="http://graph.facebook.com/{{unbound friend.id}}/picture">
+            <h2 class='name'>{{friend.name}}</h2>
+            <!--<p class="id hidden">{{friend.id}}</p>-->
+
+            {{view JagerBondsApp.CheckBubbleView tagName="span" class="isSelected check-bubble"}}
+        </li>
+    {{/each}}
+</ul>
