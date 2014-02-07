@@ -2,9 +2,10 @@ var x = 0, y = 0,
     vx = 0, vy = 0,
     ax = 0, ay = 0;
 
-var body = document.getElementById("mybody");
 //var sphereA = document.getElementById("sphereA");
 //var sphereB = document.getElementById("sphereA");
+
+var body = document.getElementById("mybody");
 var maracas = document.getElementById("maracas");
 var volume = 0;
 var tilt = oldTilt = 0;
@@ -19,6 +20,7 @@ if (window.DeviceMotionEvent != undefined) {
     window.ondevicemotion = function (e) {
         ax = event.accelerationIncludingGravity.x * 5;
         ay = event.accelerationIncludingGravity.y * 5;
+        
 //        document.getElementById("accelerationX").innerHTML = e.accelerationIncludingGravity.x;
 //        document.getElementById("accelerationY").innerHTML = e.accelerationIncludingGravity.y;
 //        document.getElementById("accelerationZ").innerHTML = e.accelerationIncludingGravity.z;
@@ -37,31 +39,30 @@ if (window.DeviceMotionEvent != undefined) {
 
     var imageClicked = function() {
 
-        if (myAudio.duration == 0 || maracas.paused) {
-            maracas.play();
-        } else {
-            maracas.stop();
-        }
+//        if (myAudio.duration == 0 || maracas.paused) {
+//            maracas.play();
+//        } else {
+//            maracas.stop();
+//        }
 
-        alert("click");
     }
 
 //    imgA.addEventListener('click', imageClicked );
 //    imgB.addEventListener('click', imageClicked );
 
     setInterval(function () {
-        var landscapeOrientation = window.innerWidth / window.innerHeight > 1;
-        if (landscapeOrientation) {
-            vx = vx + ay;
-            vy = vy + ax;
-        } else {
-            vy = vy - ay;
-            vx = vx + ax;
-        }
-        vx = vx * 0.98;
-        vy = vy * 0.98;
-        y = parseInt(y + vy / 50);
-        x = parseInt(x + vx / 50);
+//        var landscapeOrientation = window.innerWidth / window.innerHeight > 1;
+//        if (landscapeOrientation) {
+//            vx = vx + ay;
+//            vy = vy + ax;
+//        } else {
+//            vy = vy - ay;
+//            vx = vx + ax;
+//        }
+//        vx = vx * 0.98;
+//        vy = vy * 0.98;
+//        y = parseInt(y + vy / 50);
+//        x = parseInt(x + vx / 50);
 
 
         if (volume > 0) {
@@ -71,6 +72,7 @@ if (window.DeviceMotionEvent != undefined) {
         }
 
         oldTilt = tilt;
+
         tilt = ax < 0 ? 0 : 1;
 
         if (oldTilt != tilt) {
