@@ -2,7 +2,6 @@
 <!-- saved from url=(0050)http://www.albertosarullo.com/demos/accelerometer/ -->
 <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Accelerometer Javascript Test</title>
-<meta name="viewport" content="width=500,user-scalable=no">
 <style>
 body {
 	font-family: helvetica, arial, sans serif;
@@ -14,12 +13,12 @@ body {
 
 <body id="mybody" style="background-color: black">
 <div id="content">
-    <div id="imgA" onclick="imageClicked()"><img src="joeA.jpg" /></div>
-    <div id="imgB" onclick="imageClicked()"><img src="joeB.jpg" /></div>
+    <div id="imgA"><img src="joeA.jpg" onclick="imageClicked()" /></div>
+    <div id="imgB"><img src="joeB.jpg" onclick="imageClicked()" /></div>
 
 
 
-    <audio id="maracas" loop="loop" autoplay="autoplay" controls="controls">
+    <audio id="maracas" loop="loop" controls="controls">
         <source src="maraca.mp3" autoplay="autoplay" type="audio/mpeg">
     </audio>
 
